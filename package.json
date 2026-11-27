@@ -1,0 +1,1 @@
+{"name":"portfolio-videomaker","private":true,"type":"module","scripts":{"dev":"wrangler dev","db:local":"wrangler d1 migrations apply portfolio-catalogo --local","db:online":"wrangler d1 migrations apply portfolio-catalogo --remote","deploy":"wrangler deploy","test":"node --test tests/*.test.mjs"},"devDependencies":{"wrangler":"^4.0.0"}}

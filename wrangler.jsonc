@@ -1,0 +1,37 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "portfolio-videomaker",
+	"main": "src/worker.mjs",
+	"compatibility_date": "2026-11-26",
+	"workers_dev": true,
+	"assets": {
+		"directory": "./public",
+		"binding": "ASSETS",
+		"run_worker_first": [
+			"/admin",
+			"/admin/*",
+			"/projetos.js",
+			"/uploads/*"
+		]
+	},
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "portfolio-catalogo",
+			"database_id": "ba9a4888-27e0-4260-a9ef-76798703e6af",
+			"migrations_dir": "migrations"
+		},
+		{
+			"binding": "portfolio_catalogo",
+			"database_name": "portfolio-catalogo",
+			"database_id": "ba9a4888-27e0-4260-a9ef-76798703e6af",
+			"remote": true
+		}
+	],
+	"r2_buckets": [
+		{
+			"binding": "MEDIA",
+			"bucket_name": "portfolio-videomaker-media"
+		}
+	]
+}
